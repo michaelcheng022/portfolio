@@ -8,10 +8,19 @@
 .name-text {
     color: white;
 }
-#nav-link {
-    display: block;
-    margin-top: 30px;
+
+#mainNavbar {
+    border-bottom: solid 5px;
+    border-bottom-color: rgb(255, 130, 228);
+    font-size: 1.3rem;
+    font-weight: 300;
 }
+
+#mainNavbar .nav-link:hover {
+    color: rgb(233, 4, 164);
+}
+
+
 
 .about-block {
     padding: 50px 0 100px 0;
@@ -25,7 +34,6 @@
 
 #about-info {
     padding: 0 200px 0 200px;
-    text-align: justify;
 }
 
 .project-block {
