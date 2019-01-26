@@ -1,4 +1,6 @@
 
+
+
 $(window).scroll(function() {
     var distanceFromTop = $(window).scrollTop();
     if(distanceFromTop > $('.landing-block').outerHeight() + $('#mainNavbar').outerHeight()) {
@@ -7,6 +9,30 @@ $(window).scroll(function() {
     else {
         $('#mainNavbar').removeClass('fixed-top');
     }
+});
+
+$(window).scroll(function() {
+    var distanceFromTop = $(window).scrollTop();
+    if(distanceFromTop > $('.landing-block').outerHeight() + $('#mainNavbar').outerHeight()) {
+        $('#mainNavbar').addClass('fixed-top');
+    }
+    else {
+        $('#mainNavbar').removeClass('fixed-top');
+    }
+});
+
+$(window).scroll(function() {
+    var position = $(this).scrollTop();
+
+    $('.section-block').each(function() {
+        var target = $(this).offset().top;
+        var id = $(this).attr('id');
+
+        if (position >= target) {
+            $('.navbar-nav > li > a').removeClass('active');
+            $('.navbar-nav > li > a[href=\\#' + id + ']').addClass('active');
+        }
+    })
 });
 
 $(document).on('click', 'a[href^="#"]', function(e) {
@@ -23,10 +49,10 @@ $(document).on('click', 'a[href^="#"]', function(e) {
     e.preventDefault();
 
     // top position relative to the document
-    var pos = $id.offset().top;
+    var position = $id.offset().top;
 
     // animated top scrolling
     $('body, html').animate( {
-        scrollTop: pos
+        scrollTop: position
     }, 340);
 });

@@ -1,7 +1,9 @@
+
 .landing-block {
     text-align: center;
     height: 100vh;
-    background: black;
+    background: url("./resources/temp-img-filler.jpg");
+    
     margin: 0 auto;
     
 }
@@ -15,14 +17,18 @@
     font-size: 7vw;
 }
 
+.name-text span {
+    color: rgb(231, 201, 26);
+}
+
 .name-text p {
     font-size: 3vw;
 }
 
 #mainNavbar {
     border-bottom: solid 5px;
-    border-bottom-color: rgb(11, 192, 238);
-    font-size: 1.2rem;
+    border-bottom-color: rgb(0, 175, 219);
+    font-size: 1.25rem;
     font-weight: 310;
     background: #1B242F;
 }
@@ -31,8 +37,8 @@
     color: white !important;
 }
 #mainNavbar .nav-link:hover {
-    color: rgb(11, 192, 238) !important;
-    transition: 1000ms !important;
+    color: rgb(231, 201, 26) !important;
+    transition: 400ms ease-in !important;
 }
 
 .navbar-dark .navbar-toggler {
@@ -40,36 +46,66 @@
 }
 
 .fixed-top {
-    animation: smoothScroll 1s forwards;
+    animation: smoothScroll 0.6s forwards;
 }
 
 @keyframes smoothScroll {
     0% {
-        transform: translateY(-40px);
+        transform: translateY(-44px);
     }
     100% {
         transform: translateY(0px);
     }
 }
-.about-block {
-    padding: 50px 0 100px 0;
-    background: rgba(236, 236, 236, 0.747);
-    color: black;
+
+.section-block {
+    padding: 120px 10vw 150px 10vw;
 }
 .section-title {
     text-align: center;
     margin-bottom: 25px;
     font-family: 'Open Sans', sans-serif;
+}
 
+.section-title h2 {
+    font-weight: 1000;
+    font-size: 30pt;
+    color: rgb(31, 31, 31);
+    animation: slideInRight 2s forwards;
+}
+
+.title-bar {
+    border-bottom: solid 4.5px rgb(31, 31, 31);
+    margin: 20px 35vw 20px 35vw;
+    animation: slideInRight 2s forwards;
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(70vw); 
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#about {
+    background: rgba(236, 236, 236, 0.747);
+    color: black;
 }
 
 #about-info {
     padding: 0 200px 0 200px;
 }
 
-.project-block {
-    padding: 50px 0 100px 0;
-    background: rgba(236, 236, 236, 0.747);
+.profile-pic {
+    border: solid 2px  rgb(18, 164, 201);
+}
+
+#project {
+    background: rgba(204, 204, 204, 0.747);
 }
 
 .card {
@@ -78,9 +114,13 @@
     
 }
 
-.contact-block {
+#contact {
     padding: 50px 0 70px 0;
     background: #252934;
+    color: white;
+}
+
+#contact .section-title h2 {
     color: white;
 }
 
