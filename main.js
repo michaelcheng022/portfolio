@@ -1,9 +1,10 @@
-
-
+$(document).ready(function(){
+    $(this).scrollTop(0);
+});
 
 $(window).scroll(function() {
     var distanceFromTop = $(window).scrollTop();
-    if(distanceFromTop > $('.landing-block').outerHeight() + $('#mainNavbar').outerHeight()) {
+    if(distanceFromTop > $('#home').outerHeight() + $('#mainNavbar').outerHeight()) {
         $('#mainNavbar').addClass('fixed-top');
     }
     else {
@@ -11,29 +12,38 @@ $(window).scroll(function() {
     }
 });
 
-$(window).scroll(function() {
-    var distanceFromTop = $(window).scrollTop();
-    if(distanceFromTop > $('.landing-block').outerHeight() + $('#mainNavbar').outerHeight()) {
-        $('#mainNavbar').addClass('fixed-top');
-    }
-    else {
-        $('#mainNavbar').removeClass('fixed-top');
-    }
+function inViewport($el) {
+    var elH = $el.outerHeight(),
+        H   = $(window).height(),
+        r   = $el[0].getBoundingClientRect(), t=r.top, b=r.bottom;
+    return Math.max(0, t>0? Math.min(elH, H-t) : Math.min(b, H));
+}
+
+$(window).on("scroll resize", function(){
+    console.log( inViewport($('#about')) ); // n px in viewport
 });
 
 $(window).scroll(function() {
-    var position = $(this).scrollTop();
+    if(inViewport($('#about'))> 125) {
+        $('#aboutHeader').addClass('slideInRight');
+    }
+    if(inViewport($('#about'))> 400) {
+        $('#profile-pic').addClass('slideUp');
+    }
+})
+// $(window).scroll(function() {
+//     var position = $(this).scrollTop();
 
-    $('.section-block').each(function() {
-        var target = $(this).offset().top;
-        var id = $(this).attr('id');
+//     $('.section-block').each(function() {
+//         var target = $(this).offset().top;
+//         var id = $(this).attr('id');
 
-        if (position >= target) {
-            $('.navbar-nav > li > a').removeClass('active');
-            $('.navbar-nav > li > a[href=\\#' + id + ']').addClass('active');
-        }
-    })
-});
+//         if (position >= target) {
+//             $('.navbar-nav > li > a').removeClass('active');
+//             $('.navbar-nav > li > a[href=\\#' + id + ']').addClass('active');
+//         }
+//     })
+// });
 
 $(document).on('click', 'a[href^="#"]', function(e) {
     // target element id

@@ -67,17 +67,20 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+.slideInRight {
+    animation: slideInRight 2s forwards;
+}
+
 .section-title h2 {
     font-weight: 1000;
     font-size: 30pt;
     color: rgb(31, 31, 31);
-    animation: slideInRight 2s forwards;
+
 }
 
 .title-bar {
     border-bottom: solid 4.5px rgb(31, 31, 31);
     margin: 20px 35vw 20px 35vw;
-    animation: slideInRight 2s forwards;
 }
 
 @keyframes slideInRight {
@@ -100,8 +103,24 @@
     padding: 0 200px 0 200px;
 }
 
-.profile-pic {
+#profile-pic {
     border: solid 2px  rgb(18, 164, 201);
+    opacity: 0;
+}
+
+.slideUp {
+    animation: slideUp 2s forwards 1s;
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(70vh); 
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 #project {
