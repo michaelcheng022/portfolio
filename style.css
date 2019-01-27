@@ -14,11 +14,12 @@
 		1px -1px 0 rgba(71, 71, 71, 0.678),
 		-1px 1px 0 rgba(71, 71, 71, 0.678),
 		1px 1px 0 rgba(71, 71, 71, 0.678);
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .name-text h1 {
-    font-size: 7vw;
+    font-size: 8vw;
+    font-weight: bold;
 }
 
 .name-text span {
@@ -112,6 +113,8 @@
 #about {
     background: rgba(228, 227, 227, 0.788);
     color: black;
+    font-family: 'Montserrat', sans-serif;
+
 }
 
 #about-info {
@@ -169,12 +172,22 @@
 }
 .card {
     font-family: 'Muli', sans-serif;
+    font-size: 10pt;
     background: rgba(204, 204, 204, 0.747);  
     border: none;
 }
 
 .card-img-top {
     border-radius: 0;
+}
+
+.card-title a{
+    color: black;
+}
+
+.card-title a:hover{
+    color: rgb(26, 108, 231) !important;
+    transition: 200ms ease-in !important;
 }
 
 #contact {
@@ -200,6 +213,11 @@
 
 #contact-link a {
     color: white;
+}
+
+#contact-link a:hover {
+    color: rgb(26, 108, 231) !important;
+    transition: 200ms ease-in !important;
 }
 
 footer {
