@@ -120,6 +120,11 @@
 
 #profile-pic {
     opacity: 0;
+    width: auto;
+    height: auto;
+    /* 4032 x 3024 */
+    max-width: 403.2px;
+    max-height: 302.4px;
 }
 
 .slideUp {
