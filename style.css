@@ -43,6 +43,8 @@
 }
 #mainNavbar .nav-link:hover {
     color: rgb(231, 201, 26) !important;
+    -webkit-transition: 400ms ease-in !important;
+    -o-transition: 400ms ease-in !important;
     transition: 400ms ease-in !important;
 }
 
@@ -56,15 +58,29 @@
 }
 
 .fixed-top {
-    animation: smoothScroll 0.6s forwards;
+    -webkit-animation: smoothScroll 0.6s forwards;
+            animation: smoothScroll 0.6s forwards;
+}
+
+@-webkit-keyframes smoothScroll {
+    0% {
+        -webkit-transform: translateY(-44px);
+                transform: translateY(-44px);
+    }
+    100% {
+        -webkit-transform: translateY(0px);
+                transform: translateY(0px);
+    }
 }
 
 @keyframes smoothScroll {
     0% {
-        transform: translateY(-44px);
+        -webkit-transform: translateY(-44px);
+                transform: translateY(-44px);
     }
     100% {
-        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+                transform: translateY(0px);
     }
 }
 
@@ -97,16 +113,31 @@
 }
 
 .slideInRight {
-    animation: slideInRight 2s forwards;
+    -webkit-animation: slideInRight 2s forwards;
+            animation: slideInRight 2s forwards;
+}
+
+@-webkit-keyframes slideInRight {
+    0% {
+        -webkit-transform: translateX(70vw);
+                transform: translateX(70vw); 
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+    }
 }
 
 @keyframes slideInRight {
     0% {
-        transform: translateX(70vw); 
+        -webkit-transform: translateX(70vw);
+                transform: translateX(70vw); 
     }
     100% {
         opacity: 1;
-        transform: translateX(0);
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
     }
 }
 
@@ -131,17 +162,33 @@
 }
 
 .slideUp {
-    animation: slideUp 2s forwards;
+    -webkit-animation: slideUp 2s forwards;
+            animation: slideUp 2s forwards;
+}
+
+@-webkit-keyframes slideUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(50vh);
+                transform: translateY(50vh); 
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
 }
 
 @keyframes slideUp {
     0% {
         opacity: 0;
-        transform: translateY(50vh); 
+        -webkit-transform: translateY(50vh);
+                transform: translateY(50vh); 
     }
     100% {
         opacity: 1;
-        transform: translateY(0);
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
     }
 }
 
@@ -158,16 +205,31 @@
 }
 
 .slideInLeft {
-    animation: slideInLeft 2s forwards;
+    -webkit-animation: slideInLeft 2s forwards;
+            animation: slideInLeft 2s forwards;
+}
+
+@-webkit-keyframes slideInLeft {
+    0% {
+        -webkit-transform: translateX(-70vw);
+                transform: translateX(-70vw); 
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+    }
 }
 
 @keyframes slideInLeft {
     0% {
-        transform: translateX(-70vw); 
+        -webkit-transform: translateX(-70vw);
+                transform: translateX(-70vw); 
     }
     100% {
         opacity: 1;
-        transform: translateX(0);
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
     }
 }
 .card {
@@ -187,6 +249,8 @@
 
 .card-title a:hover{
     color: rgb(26, 108, 231) !important;
+    -webkit-transition: 200ms ease-in !important;
+    -o-transition: 200ms ease-in !important;
     transition: 200ms ease-in !important;
 }
 
@@ -217,6 +281,8 @@
 
 #contact-link a:hover {
     color: rgb(26, 108, 231) !important;
+    -webkit-transition: 200ms ease-in !important;
+    -o-transition: 200ms ease-in !important;
     transition: 200ms ease-in !important;
 }
 
@@ -230,19 +296,27 @@ footer {
     font-size: 19pt;
     display: inline-block;
     color: white;
-    box-shadow: 0px 0px 2px #888;
+    -webkit-box-shadow: 0px 0px 2px #888;
+            box-shadow: 0px 0px 2px #888;
     padding: 0.5em 0.6em;
     margin: 0 15px;
   }
 
 #footerBar i:hover {
-    box-shadow: 0px 0px 5px rgba(0, 120, 233, 0.418);
+    -webkit-box-shadow: 0px 0px 5px rgba(0, 120, 233, 0.418);
+            box-shadow: 0px 0px 5px rgba(0, 120, 233, 0.418);
     background: rgb(18, 164, 201);
-    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+            transform: scale(1.2);
 }
 
 #footerBar i {
+    -webkit-transition: background 0.4s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    transition: background 0.4s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    -o-transition: background 0.4s ease-in-out, transform 0.3s ease-in-out;
     transition: background 0.4s ease-in-out, transform 0.3s ease-in-out;
+    transition: background 0.4s ease-in-out, transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
 }
 
 footer .footnote {
