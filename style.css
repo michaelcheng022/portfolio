@@ -2,14 +2,18 @@
 .landing-block {
     text-align: center;
     height: 100vh;
-    background: url("./resources/temp-img-filler.jpg");
-    
+    background: url("https://images.unsplash.com/photo-1529101091764-c3526daf38fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=891&q=80");
+    background-size: cover;
     margin: 0 auto;
-    
 }
 
 .name-text {
-    color: white;
+    color: rgb(255, 255, 255);
+    text-shadow:
+		-1px -1px 0 rgba(71, 71, 71, 0.678),
+		1px -1px 0 rgba(71, 71, 71, 0.678),
+		-1px 1px 0 rgba(71, 71, 71, 0.678),
+		1px 1px 0 rgba(71, 71, 71, 0.678);
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -41,6 +45,11 @@
     transition: 400ms ease-in !important;
 }
 
+.highlight {
+    color: rgb(231, 201, 26) !important;
+    /* transition: 100ms ease-in !important; */
+}
+
 .navbar-dark .navbar-toggler {
     border-color: transparent !important;
 }
@@ -67,15 +76,10 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-.slideInRight {
-    animation: slideInRight 2s forwards;
-}
-
 .section-title h2 {
     font-weight: 1000;
     font-size: 30pt;
     color: rgb(31, 31, 31);
-
 }
 
 .title-bar {
@@ -83,9 +87,20 @@
     margin: 20px 35vw 20px 35vw;
 }
 
+#about-title {
+    opacity: 0;
+}
+
+#about-bar {
+    opacity: 0;
+}
+
+.slideInRight {
+    animation: slideInRight 2s forwards;
+}
+
 @keyframes slideInRight {
     0% {
-        opacity: 0;
         transform: translateX(70vw); 
     }
     100% {
@@ -95,7 +110,7 @@
 }
 
 #about {
-    background: rgba(236, 236, 236, 0.747);
+    background: rgba(228, 227, 227, 0.788);
     color: black;
 }
 
@@ -104,18 +119,17 @@
 }
 
 #profile-pic {
-    border: solid 2px  rgb(18, 164, 201);
     opacity: 0;
 }
 
 .slideUp {
-    animation: slideUp 2s forwards 1s;
+    animation: slideUp 2s forwards;
 }
 
 @keyframes slideUp {
     0% {
         opacity: 0;
-        transform: translateY(70vh); 
+        transform: translateY(50vh); 
     }
     100% {
         opacity: 1;
@@ -127,14 +141,38 @@
     background: rgba(204, 204, 204, 0.747);
 }
 
+#project-title {
+    opacity: 0;
+}
+
+#project-bar {
+    opacity: 0;
+}
+
+.slideInLeft {
+    animation: slideInLeft 2s forwards;
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-70vw); 
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 .card {
     font-family: 'Muli', sans-serif;
-    background: #f4f4f4;
-    
+    background: rgba(204, 204, 204, 0.747);  
+    border: none;
+}
+
+.card-img-top {
+    border-radius: 0;
 }
 
 #contact {
-    padding: 50px 0 70px 0;
     background: #252934;
     color: white;
 }
@@ -143,9 +181,12 @@
     color: white;
 }
 
+#contact .title-bar {
+    border-bottom-color: white;
+}
+
 #email-info {
     text-align: center;
-    padding: 10px;
 }
 
 #contact-link {

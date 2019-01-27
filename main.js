@@ -20,30 +20,40 @@ function inViewport($el) {
 }
 
 $(window).on("scroll resize", function(){
-    console.log( inViewport($('#about')) ); // n px in viewport
+    console.log( inViewport($('#home')) ); // n px in viewport
 });
 
 $(window).scroll(function() {
     if(inViewport($('#about'))> 125) {
-        $('#aboutHeader').addClass('slideInRight');
+        $('#about-title, #about-bar').addClass('slideInRight');
     }
-    if(inViewport($('#about'))> 400) {
+    if(inViewport($('#about'))> 350) {
         $('#profile-pic').addClass('slideUp');
     }
+    if(inViewport($('#project')) > 200) {
+        $('#project-title, #project-bar').addClass('slideInLeft');
+    }
+    if(inViewport($('#contact')) > 50) {
+        $('#contact-title, #contact-bar').addClass('slideInRight');
+    }
 })
-// $(window).scroll(function() {
-//     var position = $(this).scrollTop();
+$(window).scroll(function() {
+    var position = $(this).scrollTop();
 
-//     $('.section-block').each(function() {
-//         var target = $(this).offset().top;
-//         var id = $(this).attr('id');
+    $('.section-block').each(function() {
+        var target = $(this).offset().top - 44;
+        var id = $(this).attr('id');
 
-//         if (position >= target) {
-//             $('.navbar-nav > li > a').removeClass('active');
-//             $('.navbar-nav > li > a[href=\\#' + id + ']').addClass('active');
-//         }
-//     })
-// });
+        if (position >= target) {
+            $('.navbar-nav > li > a').removeClass('highlight');
+            $('.navbar-nav > li > a[href=\\#' + id + ']').addClass('highlight');
+        }
+        else if((inViewport($('#home')) > 5)) {
+            $('.navbar-nav > li > a').removeClass('highlight');
+            $('.navbar-nav > li > a[href=\\#home]').addClass('highlight');
+        }
+    })
+});
 
 $(document).on('click', 'a[href^="#"]', function(e) {
     // target element id
